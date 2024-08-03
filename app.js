@@ -7,6 +7,9 @@ app.use(cors())
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
     console.log("Server started on port " + PORT)
+    app.get("/",function(req,res){
+        return res.json( "API running on PORT " + PORT)
+    })
     app.get('/all', function (req, res) {
         return res.json("Working")
      })
